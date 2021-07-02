@@ -12,7 +12,7 @@ A Vue component for stories
 npm install vue-social-media-stories
 ```
 
-## Demo
+## Description
 
 The component responds to actions like tap on the story to pause / play, click on the progress bars to navigate to different stories with custom time duration for each story.
 
