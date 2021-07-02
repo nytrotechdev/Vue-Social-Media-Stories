@@ -1,11 +1,23 @@
 {
   "name": "vue-social-media-stories",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/vue-social-media-stories.ssr.js",
   "browser": "dist/vue-social-media-stories.esm.js",
   "module": "dist/vue-social-media-stories.esm.js",
   "unpkg": "dist/vue-social-media-stories.min.js",
+  "author": "Tashif Muzaffar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nytrotechdev/Vue-Social-Media-Stories.git"
+  },
+  "keywords": [
+    "stories",
+    "instagram",
+    "vue",
+    "vue-component",
+    "javascript"
+  ],
   "files": [
     "dist/*",
     "src/**/*.vue"

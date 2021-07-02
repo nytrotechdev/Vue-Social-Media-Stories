@@ -1,5 +1,6 @@
-<h1 style="margin: 0" align="center">vue-social-media-stories</h1>
-<p align="center">A Vue component for stories</p>
+# vue-social-media-stories
+
+A Vue component for stories
 
 <br>
 
