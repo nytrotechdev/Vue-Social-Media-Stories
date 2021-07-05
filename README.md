@@ -29,8 +29,8 @@ export default Vue.extend({
   name: 'ServeDev',
   components: {
     VueSocialMediaStories,
-    HeaderTestComponent,
-    SeemoreTestComponent,
+    HeaderTestComponent,// eslint-disable-line
+    SeemoreTestComponent,// eslint-disable-line
   },
   data(){
     return{
@@ -147,6 +147,53 @@ styles: {
   height:"96%",
   objectFit:"cover",
 }
+```
+## Events
+
+Following are the events triggered
+```jsx
+<template>
+  <div id="app">
+    <vue-social-media-stories
+      :width="350" 
+      :height="600" 
+      :stories="stories" 
+      :loop=true 
+      :isPause=true 
+      :fullscreenMode=true
+      v-on:fullscreen="CheckFullScreen($event)" 
+      v-on:seemore="CheckSeemore($event)"
+      v-on:lastframe="LastFrame($event)"  
+    />
+  </div>
+</template>
+
+<script>
+export default Vue.extend({
+  name: 'ServeDev',
+  components: {
+    .....
+  },
+  data(){
+    return{
+      stories:[
+        ....
+      ]
+    }
+  },
+  methods:{
+    CheckFullScreen(value){
+      console.log(value); //On fullscreen toggle return true or false
+    },
+    CheckSeemore(value){
+      console.log(value); //On seemore toggle return true or false
+    },
+    LastFrame(value){
+      console.log(value); //returns true when cycle is completed
+    },
+  }
+});
+</script>
 ```
 
 ## Development

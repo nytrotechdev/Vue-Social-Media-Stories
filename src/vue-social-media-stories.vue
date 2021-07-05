@@ -288,6 +288,7 @@ export default {
         this.styles.default_social_stories_container_style.left = '';
         this.styles.default_social_stories_container_style.marginLeft = '';
         this.fullscreen = false;
+        this.$emit('fullscreen', false);
       }
       else{
         this.styles.left_frame_button.display = '';
@@ -315,6 +316,7 @@ export default {
         this.styles.default_social_stories_container_style.left = '50%';
         this.styles.default_social_stories_container_style.marginLeft = '-'+((screen.width*0.27)/2)+'px';
         this.fullscreen = true;
+        this.$emit('fullscreen', true);
       }
     }, 
 
@@ -329,6 +331,7 @@ export default {
         this.styles.see_more_content.display = 'none';
         this.seemoreClick = false;
         this.arrowClick = false;
+        this.$emit('seemore', false);
       }
       else{
         this.pause_frame();
@@ -341,6 +344,7 @@ export default {
         this.render_seemore_component = this.stories[this.frame].seemore;
         this.seemoreClick = true;
         this.arrowClick = true;
+        this.$emit('seemore', true);
       }
     },
 
@@ -499,6 +503,7 @@ export default {
             this.set_frame_duration();
           }
           else{
+            this.$emit('lastframe',true);
             if(this.loop){
               this.frame = 0;
               this.stop_all_animation();

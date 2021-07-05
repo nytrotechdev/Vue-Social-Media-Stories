@@ -8,8 +8,8 @@ export default Vue.extend({
   name: 'ServeDev',
   components: {
     VueSocialMediaStories,
-    HeaderTestComponent,
-    SeemoreTestComponent,
+    HeaderTestComponent,// eslint-disable-line
+    SeemoreTestComponent,// eslint-disable-line
   },
   data(){
     return{
@@ -52,6 +52,17 @@ export default Vue.extend({
         },
       ]
     }
+  },
+  methods:{
+    CheckFullScreen(value){
+      console.log(value);
+    },
+    CheckSeemore(value){
+      console.log(value);
+    },
+    LastFrame(value){
+      console.log(value);
+    },
   }
 });
 </script>
@@ -64,7 +75,10 @@ export default Vue.extend({
       :stories="stories" 
       :loop=true 
       :isPause=true 
-      :fullscreenMode=true 
+      :fullscreenMode=true
+      v-on:fullscreen="CheckFullScreen($event)" 
+      v-on:seemore="CheckSeemore($event)"
+      v-on:lastframe="LastFrame($event)"  
     />
   </div>
 </template>

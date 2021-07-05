@@ -346,6 +346,7 @@ var script = {
         this.styles.default_social_stories_container_style.left = '';
         this.styles.default_social_stories_container_style.marginLeft = '';
         this.fullscreen = false;
+        this.$emit('fullscreen', false);
       } else {
         this.styles.left_frame_button.display = '';
         this.styles.right_frame_button.display = '';
@@ -369,6 +370,7 @@ var script = {
         this.styles.default_social_stories_container_style.left = '50%';
         this.styles.default_social_stories_container_style.marginLeft = '-' + screen.width * 0.27 / 2 + 'px';
         this.fullscreen = true;
+        this.$emit('fullscreen', true);
       }
     },
     seemore_click: function seemore_click() {
@@ -382,6 +384,7 @@ var script = {
         this.styles.see_more_content.display = 'none';
         this.seemoreClick = false;
         this.arrowClick = false;
+        this.$emit('seemore', false);
       } else {
         this.pause_frame();
         this.styles.arrow_style.fill = 'black';
@@ -393,6 +396,7 @@ var script = {
         this.render_seemore_component = this.stories[this.frame].seemore;
         this.seemoreClick = true;
         this.arrowClick = true;
+        this.$emit('seemore', true);
       }
     },
     stop_all_animation: function stop_all_animation() {
@@ -550,6 +554,8 @@ var script = {
 
             _this4.set_frame_duration();
           } else {
+            _this4.$emit('lastframe', true);
+
             if (_this4.loop) {
               _this4.frame = 0;
 
@@ -718,7 +724,7 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-33f93f49_0", {
+  inject("data-v-b436d676_0", {
     source: ".social_stories_progress{background:#fff;width:0%;height:100%}@keyframes start_progress{from{width:0%}to{width:100%}}.social_stories_box{padding:1px 20px}.social_stories_box_heading{font-family:Arial,Helvetica,sans-serif;margin-top:10%}.social_seemore{height:100%;width:100%;background:#fff;border:1px solid #fff;border-radius:50%;display:flex;justify-content:center;align-items:center}.social_seemore path{fill:#000}.social_seemore a{color:#fff;text-decoration:none;font-size:12px;width:100%;text-align:center}.social_seemore_box{display:none;justify-content:center;position:absolute;width:100%;height:15%;background:0 0;bottom:0}@keyframes slideup{from{height:15%;background:0 0}to{height:100%;background:#fff}}@keyframes slidedown{from{height:100%;background:#fff}to{height:15%;background:0 0}}",
     map: undefined,
     media: undefined
@@ -730,7 +736,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-33f93f49";
+var __vue_module_identifier__ = "data-v-b436d676";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
